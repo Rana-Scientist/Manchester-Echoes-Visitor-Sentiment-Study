@@ -53,4 +53,4 @@ The project covers the following analytical stages:
 ## ▶️ How to Run the Project
 1. Clone the repository:
    ```bash
-   git clone https://github.com/USERNAME/REPO_NAME.git
+   git clone https://github.com/Rana-Scientist/Manchester-Echoes-Visitor-Sentiment-Study.git
