@@ -1,0 +1,634 @@
+
+<html>
+<head>
+<title>Rana Attique | Pre-Inspection Vehicle Classification - Case Study (2025)</title>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+<style>
+table {border-collapse: collapse; width:100%;}
+th, td {padding: 6px; text-align: center; border-bottom: 2px solid #ddd; font-size:14px;}
+tr:hover {background-color: #f0f8ff;}
+h2, h3, h4 {padding-top: 10px;}
+li {margin-bottom:8px;}
+</style>
+</head>
+
+<body>
+<div class='container'>
+
+<center>
+<h2><b>Manchester Echoes Visitor Sentiment Study at Heaton Park</b></h2>
+<h4>Presented By: <b>Rana Touqeer Attique</b></h4>
+<a href='https://www.linkedin.com/in/rprof' target='_blank'><b>Visit LinkedIn Profile</b></a>
+
+
+<section class="my-3" style="text-align:center;">
+  <h6 style="margin-top:8px; font-weight:600;">
+    This dataset has been intentionally modified for research and learning purposes. Several variables were programmatically manipulated to introduce controlled ambiguity and realistic behavioural patterns. The dataset should therefore be used for analytical demonstration, modelling, and exploratory research only, and not interpreted as a direct representation of real-world survey outcomes.
+  </h6>
+
+  <div class="mt-3" style="text-align:center;">
+    <strong>Key stages covered:</strong><br>
+
+    <ul style="display:inline-block; text-align:left; margin-top:8px;">
+
+  <li>Data cleaning and data wrangling</li>
+  <li>Handling missing, ambiguous, and inconsistent values</li>
+  <li>Exploratory Data Analysis (EDA)</li>
+  <li>Analysis of demographic and attendance patterns</li>
+  <li>Data preparation for sentiment analysis</li>
+  <li>Text normalization and feedback consolidation</li>
+  <li>Sentiment analysis using NLP techniques (VADER and DistilBERT models)</li>
+  <li>Insight extraction from sentiment results</li>
+  <li>Visualisation of key findings</li>
+  <li>Word cloud generation to highlight dominant feedback themes</li>
+
+    </ul>
+  </div>
+</section>
+
+           <hr>
+<h4><b> Data Preparation & Standardization</b></h4>
+<li>Final Dataframe after converison and removing null values.</li>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Column_Name</th>
+      <th>Data_Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PreEvent_Information_Source</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Age_Group</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Gender</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Visitor_City</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>County</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Latitude</td>
+      <td>Float64</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Longitude</td>
+      <td>Float64</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Travel_method</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>First_impression</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>What_we_can_improve</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Want_to_see_next_year</td>
+      <td>string[python]</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Volunteer_Next_Year</td>
+      <td>Int64</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h4><b> Sentiment Analysis Visuals & DataFrames</b></h4>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/Visitor w.r.t gender.png' alt='Chart Missing'>
+
+<h6><b>• Visitors w.r.t Age Group</b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/Visitors_agegroup.png' alt='Chart Missing'>
+
+<h6><b>• Top 10 cities, visitors came from.</b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/top_10_visitor_cities.png' alt='Chart Missing'>
+
+<h6><b>• Attendies Pre-Event Awareness.</b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/pre_event_awareness.png' alt='Chart Missing'>
+
+<h6><b>• Travel Method explain via wordcloud.</b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/Travel_method.png' alt='Chart Missing'>
+
+
+<h6><b>• Geographical Distribution by City</b></h6>
+<iframe src='D:/Manchester Echoes Visitor Sentiment Study/Images/uk_city_count_map.html' width='800' height='600' frameborder='0'></iframe>
+
+
+
+<h6><b><li>Visitors who agreed to come back next year as volunteer</li></b></h6>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Visitor_City</th>
+      <th>Total_Visitors</th>
+      <th>Want_To_Volunteer</th>
+      <th>Do_Not_Want</th>
+      <th>Success_Percentage_Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Birmingham</td>
+      <td>1297</td>
+      <td>792</td>
+      <td>505</td>
+      <td>61.06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Blackpool</td>
+      <td>1350</td>
+      <td>823</td>
+      <td>527</td>
+      <td>60.96</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bolton</td>
+      <td>1279</td>
+      <td>812</td>
+      <td>467</td>
+      <td>63.49</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bradford</td>
+      <td>1328</td>
+      <td>849</td>
+      <td>479</td>
+      <td>63.93</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bristol</td>
+      <td>1319</td>
+      <td>829</td>
+      <td>490</td>
+      <td>62.85</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Cannock</td>
+      <td>1321</td>
+      <td>820</td>
+      <td>501</td>
+      <td>62.07</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Canterbury</td>
+      <td>1291</td>
+      <td>831</td>
+      <td>460</td>
+      <td>64.37</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Derby</td>
+      <td>1332</td>
+      <td>841</td>
+      <td>491</td>
+      <td>63.14</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Dundee</td>
+      <td>1404</td>
+      <td>843</td>
+      <td>561</td>
+      <td>60.04</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Glasgow</td>
+      <td>1365</td>
+      <td>869</td>
+      <td>496</td>
+      <td>63.66</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Gloucester</td>
+      <td>1347</td>
+      <td>836</td>
+      <td>511</td>
+      <td>62.06</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Kingston upon Hull</td>
+      <td>1328</td>
+      <td>825</td>
+      <td>503</td>
+      <td>62.12</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>London</td>
+      <td>1384</td>
+      <td>835</td>
+      <td>549</td>
+      <td>60.33</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Luton</td>
+      <td>1367</td>
+      <td>859</td>
+      <td>508</td>
+      <td>62.84</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Manchester</td>
+      <td>1344</td>
+      <td>861</td>
+      <td>483</td>
+      <td>64.06</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Nottingham</td>
+      <td>1354</td>
+      <td>828</td>
+      <td>526</td>
+      <td>61.15</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Preston</td>
+      <td>1364</td>
+      <td>844</td>
+      <td>520</td>
+      <td>61.88</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Sheffield</td>
+      <td>1370</td>
+      <td>867</td>
+      <td>503</td>
+      <td>63.28</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Sunderland</td>
+      <td>1343</td>
+      <td>825</td>
+      <td>518</td>
+      <td>61.43</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Swindon</td>
+      <td>1370</td>
+      <td>867</td>
+      <td>503</td>
+      <td>63.28</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h6><b></b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/volunteer_interest_by_city.png' alt='Chart Missing'>
+
+<li>Feedback Sample Data</li>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First_impression</th>
+      <th>What_we_can_improve</th>
+      <th>Want_to_see_next_year</th>
+      <th>All_Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>some food stalls overpriced</td>
+      <td>longer queues popular stalls</td>
+      <td>more picnic zones near attractions</td>
+      <td>some food stalls overpriced longer queues popular stalls more picnic zones near attractions</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>too noisy kids</td>
+      <td>more variety in food stalls</td>
+      <td>more costume fancy dress activities</td>
+      <td>too noisy kids more variety in food stalls more costume fancy dress activities</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>inclusive accessible spaces for all ages n abilities</td>
+      <td>more water stations</td>
+      <td>improved signage</td>
+      <td>inclusive accessible spaces for all ages n abilities more water stations improved signage</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>some areas too crowded</td>
+      <td>more local artisan stalls</td>
+      <td>more funfair rides</td>
+      <td>some areas too crowded more local artisan stalls more funfair rides</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>treasure hunts scavenger hunts</td>
+      <td>cheaper food options</td>
+      <td>better organization</td>
+      <td>treasure hunts scavenger hunts cheaper food options better organization</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>first aid not visible</td>
+      <td>extra toilets</td>
+      <td>better signage maps</td>
+      <td>first aid not visible extra toilets better signage maps</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>food options r limited</td>
+      <td>more picnic areas</td>
+      <td>more quiz trivia events</td>
+      <td>food options r limited more picnic areas more quiz trivia events</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>open jam sessions for musicians</td>
+      <td>interactive activities teenagers</td>
+      <td>more storytelling sessions</td>
+      <td>open jam sessions for musicians interactive activities teenagers more storytelling sessions</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>familyfriendly competitions egg spoon sack race</td>
+      <td>more kids competitions</td>
+      <td>more familyfriendly competitions</td>
+      <td>familyfriendly competitions egg spoon sack race more kids competitions more familyfriendly competitions</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>expensive food drinks</td>
+      <td>should last longer</td>
+      <td>more ice cream sweet stalls</td>
+      <td>expensive food drinks should last longer more ice cream sweet stalls</td>
+    </tr>
+  </tbody>
+</table>
+
+<h6><b><li>Sentimental analysis via Vadar Model (First 10 Rows)</li></b></h6>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Feedback_for_Sentiment</th>
+      <th>Sentiment_Score_Via_Vader</th>
+      <th>Sentiment_Label_Via_Vader</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>some food stalls overpriced longer queues popular stalls more picnic zones near attractions</td>
+      <td>0.6808</td>
+      <td>Positive</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>too noisy kids more variety in food stalls more costume fancy dress activities</td>
+      <td>-0.1779</td>
+      <td>Negative</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>inclusive accessible spaces for all ages n abilities more water stations improved signage</td>
+      <td>0.6557</td>
+      <td>Positive</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>some areas too crowded more local artisan stalls more funfair rides</td>
+      <td>0.0000</td>
+      <td>Neutral</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>treasure hunts scavenger hunts cheaper food options better organization</td>
+      <td>0.6249</td>
+      <td>Positive</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>first aid not visible extra toilets better signage maps</td>
+      <td>0.4404</td>
+      <td>Positive</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>food options r limited more picnic areas more quiz trivia events</td>
+      <td>-0.2263</td>
+      <td>Negative</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>open jam sessions for musicians interactive activities teenagers more storytelling sessions</td>
+      <td>0.0000</td>
+      <td>Neutral</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>familyfriendly competitions egg spoon sack race more kids competitions more familyfriendly competitions</td>
+      <td>0.0000</td>
+      <td>Neutral</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>expensive food drinks should last longer more ice cream sweet stalls</td>
+      <td>0.5046</td>
+      <td>Positive</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h6><b><li>Positive feedback via Vader</li></b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/Positive Feedback Via Vader.png' alt='Chart Missing'>
+
+
+<h6><b><li>Negative feedback via Vader</li></b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/Negative Feedback Via Vader.png' alt='Chart Missing'>
+
+<h6><b><li>Neutral or Constructive Feedback Via Vader</li></b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/Neutral or Constructive Feedback Via Vader.png' alt='Chart Missing'>
+
+
+
+<h6><b><li>Sentiment score via Distil Bert model</li></b></h6>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Feedback_for_Sentiment</th>
+      <th>BERT_Sentiment_Via_DistilBert</th>
+      <th>BERT_Sentiment_Score_Via_DistilBert</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>some food stalls overpriced longer queues popular stalls more picnic zones near attractions</td>
+      <td>NEGATIVE</td>
+      <td>0.986569</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>too noisy kids more variety in food stalls more costume fancy dress activities</td>
+      <td>NEGATIVE</td>
+      <td>0.997850</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>inclusive accessible spaces for all ages n abilities more water stations improved signage</td>
+      <td>POSITIVE</td>
+      <td>0.998448</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>some areas too crowded more local artisan stalls more funfair rides</td>
+      <td>NEGATIVE</td>
+      <td>0.993815</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>treasure hunts scavenger hunts cheaper food options better organization</td>
+      <td>NEGATIVE</td>
+      <td>0.987907</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>first aid not visible extra toilets better signage maps</td>
+      <td>NEGATIVE</td>
+      <td>0.998202</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>food options r limited more picnic areas more quiz trivia events</td>
+      <td>NEGATIVE</td>
+      <td>0.987201</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>open jam sessions for musicians interactive activities teenagers more storytelling sessions</td>
+      <td>POSITIVE</td>
+      <td>0.993229</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>familyfriendly competitions egg spoon sack race more kids competitions more familyfriendly competitions</td>
+      <td>NEGATIVE</td>
+      <td>0.986430</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>expensive food drinks should last longer more ice cream sweet stalls</td>
+      <td>NEGATIVE</td>
+      <td>0.996331</td>
+    </tr>
+  </tbody>
+</table>
+
+<h6><b><li>Top five most repeated feedback</li></b></h6>
+<img src='D:/Manchester Echoes Visitor Sentiment Study/Images/All_Feedback.png' alt='Chart Missing'
+
+
+
+
+<h6><b><li>PreEvent_Information_Sourcess</li></b></h6>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Volunteer_Next_Year</th>
+      <th>PreEvent_Information_Source</th>
+      <th>Dont_Want_Volunteer</th>
+      <th>Want_Volunteer_Next_Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>App Instructions</td>
+      <td>955</td>
+      <td>3059</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Email Notification</td>
+      <td>469</td>
+      <td>929</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>No Guidance</td>
+      <td>6413</td>
+      <td>4343</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Volunteer/Staff Guidance</td>
+      <td>1458</td>
+      <td>6563</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Website Information Page</td>
+      <td>806</td>
+      <td>1862</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h6 style="margin-top:8px; font-weight:600;">
+   Conclusion: Based on the data, volunteers who received App Instructions or Volunteer/Staff Guidance were much more likely to want to volunteer next year, while those with No Guidance were less likely to return. Overall, proactive pre-event communication appears to strongly increase volunteer retention.
+ </h6>
+
+
+
+</div></body></html>
